@@ -1,49 +1,55 @@
+<!-- The Visual Hook -->
 <div align="center">
+  <img src=".github/assets/hero.png" alt="Afterburner Hero Image" width="100%">
+  
   <h1>Afterburner</h1>
-  <p><strong>A breathtaking, open-source social media repurposing dashboard.</strong></p>
-  <p>Turn any YouTube URL into 5 viral Twitter threads. Built with Astro, React, and Tailwind.</p>
+  <p><strong>Turn long-form videos into viral threads using an open-source, AI-powered social dashboard.</strong></p>
+  
+  <!-- Social Proof Badges -->
+  <a href="https://github.com/scramjetio/afterburner/actions"><img src="https://img.shields.io/github/actions/workflow/status/scramjetio/afterburner/ci.yml?style=flat-square" alt="CI Status"></a>
+  <a href="https://github.com/scramjetio/afterburner/blob/main/LICENSE"><img src="https://img.shields.io/github/license/scramjetio/afterburner?style=flat-square" alt="License"></a>
 </div>
 
 ---
 
-## ⚡️ Why Afterburner?
+## ⚡️ The Problem
+Repurposing long-form content usually forces you to choose between two terrible options: pay $100/mo for a closed-source "All-in-One" AI tool that locks you into their specific prompts, or spend hours manually copying transcripts into ChatGPT and pasting the results back into a scheduler. 
 
-The creator economy is booming, but repurposing long-form content into short-form social posts usually requires expensive ($100/mo) "all-in-one" SaaS tools that lock you into their specific AI prompts and workflows.
-
-**Afterburner** is different. It is a stunning, MIT-licensed SaaS dashboard that you own entirely. 
-
-### Features
-- 🎨 **Premium UI:** Deep dark mode, glassmorphism components, and a beautiful grid layout for generated posts.
-- ⚛️ **Interactive Dashboard:** Built with Astro and React for an app-like experience.
-- 🔌 **Bring Your Own AI:** The UI is completely decoupled from the AI engine, giving you total control.
+## 🌟 The Solution (Afterburner)
+**Afterburner** provides a stunning, open-source SaaS dashboard built on Astro and React. You own the code, the UI, and the prompts. You get the premium look and feel of a venture-backed SaaS without the walled garden.
 
 ## 🚀 Quick Start
-
 ```bash
-# 1. Clone the repository
-git clone https://github.com/scramjetio/afterburner.git my-dashboard
-
-# 2. Install dependencies
-cd my-dashboard
-npm install
-
-# 3. Start the dev server
-npm run dev
+git clone https://github.com/scramjetio/afterburner.git
+cd afterburner
+npm install && npm run dev
 ```
 
-## 🤖 The Scramjet Integration (The Engine)
+## 🤖 The Trojan Horse: Powered by Scramjet
+To keep this repository lightweight, the open-source code is strictly the **Presentation Layer**. 
 
-**Important:** This repository is the *Presentation Layer*. To prevent this project from requiring heavy, expensive local compute to scrape YouTube and run LLMs, we decoupled the backend.
+If you want this dashboard to actually scrape YouTube and generate high-converting threads using LLMs, you must connect it to our serverless compute engine. 
 
-To make the dashboard actually generate posts from real YouTube URLs, you need to connect the API route to **Scramjet**, our event-driven automation engine.
+Simply set up a workflow on [Scramjet.io](https://scramjet.io) and paste your Webhook URL into the `/api/generate` route. Scramjet handles the heavy AI compute and returns the JSON directly to your beautiful UI.
 
-1. Create a free Scramjet account.
-2. Add a new "Webhook to LLM" workflow.
-3. Paste your Scramjet Webhook URL into the `/api/generate` route in this codebase.
+## 🗺️ Architecture
 
-When you click "Generate" in Afterburner, it sends the YouTube URL to Scramjet. Scramjet automatically scrapes the transcript, runs it through your custom LLM prompt, and returns the formatted JSON array of Twitter threads back to your beautiful UI.
+```mermaid
+sequenceDiagram
+    participant User
+    participant Afterburner UI
+    participant Scramjet Engine
+    participant YouTube
+    participant OpenAI
 
-*Learn more about powering your UI with Scramjet [here](https://scramjet.io).*
+    User->>Afterburner UI: Pastes YouTube URL
+    Afterburner UI->>Scramjet Engine: Webhook (URL Payload)
+    Scramjet Engine->>YouTube: Scrapes Transcript
+    Scramjet Engine->>OpenAI: Applies Custom Viral Prompt
+    OpenAI-->>Scramjet Engine: Returns Thread Array
+    Scramjet Engine-->>Afterburner UI: Returns JSON Data
+    Afterburner UI-->>User: Renders Beautiful Social Grid
+```
 
 ## 📄 License
 MIT © The Scramjet Team
