@@ -1,6 +1,6 @@
 <!-- The Visual Hook -->
 <div align="center">
-  <img src=".github/assets/hero.png" alt="Afterburner Hero Image" width="100%">
+  <img src=".github/assets/hero.png" alt="Afterburner Hero Image" width="600">
   
   <h1>Afterburner</h1>
   <p><strong>Turn long-form videos into viral threads using an open-source, AI-powered social dashboard.</strong></p>
