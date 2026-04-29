@@ -32,9 +32,9 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="space-y-12">
+    <div className="space-y-6">
       <div className="text-center max-w-2xl mx-auto space-y-4">
-        <h1 className="text-4xl md:text-5xl font-bold tracking-tight">Turn Videos into Viral Threads</h1>
+        <h1 className="text-3xl md:text-4xl font-bold tracking-tight">Turn Videos into Viral Threads</h1>
         <p className="text-gray-400 text-lg">Paste a YouTube URL below. Scramjet will scrape the transcript and use AI to extract 5 high-converting Twitter hooks.</p>
       </div>
 
@@ -49,7 +49,7 @@ export default function Dashboard() {
             placeholder="https://youtube.com/watch?v=..." 
             value={url}
             onChange={(e) => setUrl(e.target.value)}
-            className="flex-1 bg-transparent text-white placeholder-gray-500 outline-none px-2 py-3"
+            className="flex-1 bg-transparent text-white placeholder-gray-500 outline-none px-2 py-2"
             required
           />
           <button 
@@ -65,9 +65,9 @@ export default function Dashboard() {
 
       {/* Results Grid */}
       {threads.length > 0 && (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-8 border-t border-white/5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pt-8 border-t border-white/5">
           {threads.map((thread, idx) => (
-            <div key={idx} className="bg-[#111] border border-white/10 rounded-xl p-6 hover:border-blue-500/50 transition-colors">
+            <div key={idx} className="bg-[#111] border border-white/10 rounded-xl p-4 hover:border-blue-500/50 transition-colors">
               <div className="flex items-center gap-2 text-blue-400 mb-4 pb-4 border-b border-white/5">
                 <Twitter className="w-4 h-4" />
                 <span className="text-sm font-semibold tracking-wide">THREAD OPTION {idx + 1}</span>
