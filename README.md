@@ -5,10 +5,13 @@
   <h1>Afterburner</h1>
   <p><strong>Turn long-form videos into viral threads using an open-source, AI-powered social dashboard.</strong></p>
   
-  <!-- Social Proof Badges -->
+  <!-- The 6-Badge Array -->
   <a href="https://afterburner.scramjet.io" target="_blank"><img src="https://img.shields.io/badge/Live-Demo-2ecc71?style=flat-square&logo=cloudflarepages&logoColor=white" alt="Live Demo"></a>
+  <a href="https://deploy.workers.cloudflare.com/?url=https://github.com/scramjetio/afterburner"><img src="https://img.shields.io/badge/Deploy-Cloudflare-F38020?style=flat-square&logo=cloudflare&logoColor=white" alt="Deploy to Cloudflare"></a>
+  <a href="https://scramjet.io" target="_blank"><img src="https://img.shields.io/badge/Powered_by-Scramjet-000000?style=flat-square&logo=rocket&logoColor=cyan" alt="Powered by Scramjet"></a>
+  <a href="https://discord.gg/scramjetio" target="_blank"><img src="https://img.shields.io/badge/Chat-Discord-5865F2?style=flat-square&logo=discord&logoColor=white" alt="Discord"></a>
+  <a href="https://github.com/scramjetio/afterburner/stargazers"><img src="https://img.shields.io/github/stars/scramjetio/afterburner?style=flat-square&color=yellow" alt="GitHub Stars"></a>
   <a href="https://github.com/scramjetio/afterburner/actions"><img src="https://img.shields.io/github/actions/workflow/status/scramjetio/afterburner/ci.yml?style=flat-square" alt="CI Status"></a>
-  <a href="https://github.com/scramjetio/afterburner/blob/main/LICENSE"><img src="https://img.shields.io/github/license/scramjetio/afterburner?style=flat-square" alt="License"></a>
 </div>
 
 ---
@@ -19,11 +22,19 @@ Repurposing long-form content usually forces you to choose between two terrible 
 ## 🌟 The Solution (Afterburner)
 **Afterburner** provides a stunning, open-source SaaS dashboard built on Astro and React. You own the code, the UI, and the prompts. You get the premium look and feel of a venture-backed SaaS without the walled garden.
 
+## 🎥 In Action
+> **[TODO]:** Insert a 5-second WebP or GIF here showing the UI being interacted with.
+*(Placeholder: `<img src=".github/assets/demo.webp" alt="Demo" width="100%">`)*
+
 ## 🚀 Quick Start
+
+**Prerequisites:** Node.js >= 18.0
+
 ```bash
 git clone https://github.com/scramjetio/afterburner.git
 cd afterburner
-npm install && npm run dev
+npm install
+npm run dev
 ```
 
 ## 🤖 The Trojan Horse: Powered by Scramjet
@@ -33,7 +44,8 @@ If you want this dashboard to actually scrape YouTube and generate high-converti
 
 Simply set up a workflow on [Scramjet.io](https://scramjet.io) and paste your Webhook URL into the `/api/generate` route. Scramjet handles the heavy AI compute and returns the JSON directly to your beautiful UI.
 
-## 🗺️ Architecture
+<details>
+<summary><strong>🗺️ View Architecture Diagram</strong></summary>
 
 ```mermaid
 sequenceDiagram
@@ -51,6 +63,7 @@ sequenceDiagram
     Scramjet Engine-->>Afterburner UI: Returns JSON Data
     Afterburner UI-->>User: Renders Beautiful Social Grid
 ```
+</details>
 
 ## 📄 License
 MIT © The Scramjet Team
