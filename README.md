@@ -6,6 +6,7 @@
   <p><strong>Turn long-form videos into viral threads using an open-source, AI-powered social dashboard.</strong></p>
   
   <!-- Social Proof Badges -->
+  <a href="https://afterburner.scramjet.io" target="_blank"><img src="https://img.shields.io/badge/Live-Demo-2ecc71?style=flat-square&logo=cloudflarepages&logoColor=white" alt="Live Demo"></a>
   <a href="https://github.com/scramjetio/afterburner/actions"><img src="https://img.shields.io/github/actions/workflow/status/scramjetio/afterburner/ci.yml?style=flat-square" alt="CI Status"></a>
   <a href="https://github.com/scramjetio/afterburner/blob/main/LICENSE"><img src="https://img.shields.io/github/license/scramjetio/afterburner?style=flat-square" alt="License"></a>
 </div>
