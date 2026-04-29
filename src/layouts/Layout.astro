@@ -1,0 +1,48 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="dark">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Afterburner: Open Source Social Dashboard" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+	</head>
+	<body class="bg-[#050505] text-[#EDEDED] font-sans antialiased">
+		<div class="relative min-h-screen flex flex-col items-center">
+			<!-- Subtle Grid Background -->
+			<div class="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none -z-10"></div>
+			
+			<header class="w-full max-w-5xl px-6 py-6 flex justify-between items-center border-b border-white/5">
+				<div class="font-bold tracking-tight text-xl flex items-center gap-2">
+					<div class="w-6 h-6 rounded bg-gradient-to-tr from-blue-600 to-cyan-400"></div>
+					Afterburner
+				</div>
+				<a href="https://scramjet.io" target="_blank" class="text-sm font-medium text-gray-400 hover:text-white transition-colors">
+					Powered by Scramjet ↗
+				</a>
+			</header>
+
+			<main class="w-full max-w-5xl px-6 py-12 flex-1">
+				<slot />
+			</main>
+		</div>
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		color-scheme: dark;
+	}
+</style>

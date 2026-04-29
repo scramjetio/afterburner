@@ -1,0 +1,15 @@
+# build output
+dist/
+.astro/
+
+# dependencies
+node_modules/
+package-lock.json
+
+# environment variables
+.env
+.env.development
+.env.production
+
+# MacOS
+.DS_Store
