@@ -10,7 +10,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "prepare": "husky",
-    "format": "prettier --write .",
+    "format": "biome format --write .",
     "lint": "eslint .",
     "check": "npm run format && npm run lint"
   },
@@ -28,6 +28,7 @@
     "typescript": "^5.4.2"
   },
   "devDependencies": {
+    "@biomejs/biome": "^2.4.14",
     "@commitlint/cli": "^19.0.0",
     "@commitlint/config-conventional": "^19.0.0",
     "husky": "^9.0.0",
@@ -36,5 +37,6 @@
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
-  }
+  },
+  "packageManager": "pnpm@9.0.0"
 }

@@ -1,0 +1,46 @@
+{
+  "core_purpose": "Afterburner is an open-source presentation-layer dashboard built with Astro and React that lets users paste a YouTube URL and view AI-generated viral Twitter threads in a styled grid. The actual scraping and LLM compute is intended to be delegated to an external Scramjet workflow via a webhook, while this repo only ships the UI shell and a stub API route.",
+  "status": "Prototype",
+  "architecture": {
+    "frontend": "Astro + React + TailwindCSS",
+    "backend": "Astro API routes (Node)",
+    "database": "None"
+  },
+  "main_features": [
+    {
+      "name": "Dashboard UI with YouTube URL input and threads grid",
+      "status": "Operational",
+      "files_involved": [
+        "src/components/Dashboard.tsx",
+        "src/pages/index.astro",
+        "src/layouts/Layout.astro"
+      ]
+    },
+    {
+      "name": "Thread generation API endpoint",
+      "status": "Stubbed",
+      "files_involved": [
+        "src/pages/api/generate.ts"
+      ]
+    },
+    {
+      "name": "Scramjet webhook integration for real scraping/LLM compute",
+      "status": "Stubbed",
+      "files_involved": [
+        "src/pages/api/generate.ts",
+        "README.md"
+      ]
+    },
+    {
+      "name": "Dark-themed marketing layout with OpenGraph meta",
+      "status": "Operational",
+      "files_involved": [
+        "src/layouts/Layout.astro"
+      ]
+    }
+  ],
+  "technical_debt": "No tests exist (no test runner, no test files). The /api/generate route is a hardcoded mock with a setTimeout delay rather than a real Scramjet webhook call, so the headline feature is non-functional out of the box. README contains an unresolved TODO placeholder for the demo GIF (.github/assets/demo.webp). The repo carries both Biome and Prettier+ESLint configs (biome.json untracked, lint-staged still uses prettier) which is a redundant/inconsistent tooling setup. CI status badge is referenced but no .github/workflows/ci.yml is visible in the tree. The hq/ directory (architecture.json, fleet.yaml) is untracked and unintegrated.",
+  "active_roadmap": [
+    "No open GitHub issues found — roadmap is implicit: wire /api/generate to a real Scramjet webhook, add the demo.webp asset, consolidate Biome vs Prettier/ESLint tooling, and add a CI workflow to back the badge."
+  ]
+}
